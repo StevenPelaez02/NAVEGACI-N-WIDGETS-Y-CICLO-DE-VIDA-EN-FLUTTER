@@ -1,6 +1,6 @@
 import 'dart:isolate';
 import 'package:flutter/material.dart';
-import 'package:hola_mundo/views/base_view.dart';
+import 'package:hola_mundo/views/custom_drawer.dart';
 
 class TareaPesadaView extends StatefulWidget {
   const TareaPesadaView({super.key});
@@ -44,8 +44,9 @@ class _TareaPesadaViewState extends State<TareaPesadaView> {
 
   @override
   Widget build(BuildContext context) {
-    return BaseView(
-      title: "Tarea Pesada",
+    return Scaffold(
+      appBar: AppBar(title: const Text("Tarea Pesada")),
+      drawer: const CustomDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

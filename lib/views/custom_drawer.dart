@@ -51,10 +51,15 @@ class CustomDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.work),
-            title: const Text("Tarea Pesada"), // ✅ Nueva opción en el menú
+            title: const Text("Tarea Pesada"),
             onTap: () {
               context.go('/tarea_pesada');
             },
+          ),
+          ListTile(
+            leading: const Icon(Icons.pets),
+            title: const Text("Dog API"),
+            onTap: () => context.go('/api_dog')
           ),
         ],
       ),

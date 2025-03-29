@@ -7,7 +7,9 @@ import 'package:hola_mundo/views/profile_view.dart';
 import 'package:hola_mundo/views/settings_view.dart';
 import 'package:hola_mundo/views/estudiantes/estudiantes_view.dart';
 import 'package:hola_mundo/views/timer/timer_view.dart';
-import 'package:hola_mundo/views/tarea_pesada/tarea_pesada_view.dart'; // ✅ Importa la vista de Tarea Pesada
+import 'package:hola_mundo/views/tarea_pesada/tarea_pesada_view.dart';
+import 'package:hola_mundo/views/api_dog/api_view.dart';
+
 
 final GoRouter appRouter = GoRouter(
   routes: [
@@ -48,8 +50,12 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const TimerView(),
     ),
     GoRoute(
-      path: '/tarea_pesada', // ✅ Nueva ruta para Tarea Pesada
+      path: '/tarea_pesada',
       builder: (context, state) => const TareaPesadaView(),
+    ),
+    GoRoute(
+      path: '/api_dog',
+      builder: (context, state) => const ApiView(),
     ),
   ],
 );

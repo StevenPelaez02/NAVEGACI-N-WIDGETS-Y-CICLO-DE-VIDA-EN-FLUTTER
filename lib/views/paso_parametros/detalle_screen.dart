@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 /// !DetalleScreen
 /// es una vista/screen que recibe un parametro desde la navegación, en este caso un boton.

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:go_router/go_router.dart';
+import '../custom_drawer.dart';
 
 class EstudiantesView extends StatefulWidget {
   const EstudiantesView({super.key});
@@ -45,48 +45,7 @@ class _EstudiantesViewState extends State<EstudiantesView> {
           ),
         ),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
-              child: Text("Menú de Navegación",
-                  style: TextStyle(color: Colors.white, fontSize: 24)),
-            ),
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text("Inicio"),
-              onTap: () => context.go('/'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text("Configuración"),
-              onTap: () => context.go('/settings'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.person),
-              title: const Text("Perfil"),
-              onTap: () => context.go('/profile'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.autorenew),
-              title: const Text("Ciclo de Vida"),
-              onTap: () => context.go('/ciclo_vida'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.input),
-              title: const Text("Paso de Parámetros"),
-              onTap: () => context.go('/paso_parametros'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.school),
-              title: const Text("Estudiantes"),
-              onTap: () => context.go('/estudiantes'),
-            ),
-          ],
-        ),
-      ),
+      drawer: const CustomDrawer(),
       body: estudiantes.isEmpty
           ? const Center(child: CircularProgressIndicator()) // Muestra carga
           : ListView.builder(
