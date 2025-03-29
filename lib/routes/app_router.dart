@@ -5,6 +5,9 @@ import 'package:hola_mundo/views/paso_parametros/detalle_screen.dart';
 import 'package:hola_mundo/views/paso_parametros/paso_parametros_screen.dart';
 import 'package:hola_mundo/views/profile_view.dart';
 import 'package:hola_mundo/views/settings_view.dart';
+import 'package:hola_mundo/views/estudiantes/estudiantes_view.dart';
+import 'package:hola_mundo/views/timer/timer_view.dart';
+import 'package:hola_mundo/views/tarea_pesada/tarea_pesada_view.dart'; // ✅ Importa la vista de Tarea Pesada
 
 final GoRouter appRouter = GoRouter(
   routes: [
@@ -20,22 +23,33 @@ final GoRouter appRouter = GoRouter(
       path: '/profile',
       builder: (context, state) => const ProfileView(),
     ),
-    // Ruta para la pantalla de paso de parámetros
     GoRoute(
       path: '/paso_parametros',
       builder: (context, state) => const PasoParametrosScreen(),
     ),
-    // Ruta para la pantalla de detalle con parámetro
     GoRoute(
-      path: '/detalle/:parametro',
+      path: '/detalle/:parametro/:metodo',
       builder: (context, state) {
-        final parametro = state.pathParameters['parametro'] ?? 'Sin dato';
-        return DetalleScreen(parametro: parametro);
+        final parametro = state.pathParameters['parametro'] ?? '';
+        final metodo = state.pathParameters['metodo'] ?? '';
+        return DetalleScreen(parametro: parametro, metodoNavegacion: metodo);
       },
     ),
     GoRoute(
       path: '/ciclo_vida',
       builder: (context, state) => const CicloVidaScreen(),
+    ),
+    GoRoute(
+      path: '/estudiantes',
+      builder: (context, state) => const EstudiantesView(),
+    ),
+    GoRoute(
+      path: '/timer',
+      builder: (context, state) => const TimerView(),
+    ),
+    GoRoute(
+      path: '/tarea_pesada', // ✅ Nueva ruta para Tarea Pesada
+      builder: (context, state) => const TareaPesadaView(),
     ),
   ],
 );
