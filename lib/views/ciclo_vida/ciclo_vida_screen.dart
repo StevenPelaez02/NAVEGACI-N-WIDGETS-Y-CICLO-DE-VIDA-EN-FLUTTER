@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:hola_mundo/views/base_view.dart';
 
 /// !CicloVidaScreen
-/// Nos permite entender cómo funciona el ciclo de vida
+/// nos permite entender cómo funciona el ciclo de vida
 /// de un StatefulWidget en Flutter.
 
 class CicloVidaScreen extends StatefulWidget {
   const CicloVidaScreen({super.key});
 
   @override
-  State<CicloVidaScreen> createState() => _CicloVidaScreenState();
+  State<CicloVidaScreen> createState() => CicloVidaScreenState();
 }
 
-class _CicloVidaScreenState extends State<CicloVidaScreen> {
-  String texto = "Texto inicial 🟢";
+class CicloVidaScreenState extends State<CicloVidaScreen> {
+  String texto = "texto inicial 🟢";
 
   /// Se ejecuta una vez cuando la pantalla es creada.
   @override
@@ -25,12 +25,14 @@ class _CicloVidaScreenState extends State<CicloVidaScreen> {
     }
   }
 
-  /// Se ejecuta cada vez que las dependencias del widget cambian.
+  /// !didChangeDependencies se ejecuta cada vez que las dependencias del widget cambian
+  ///
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+
     if (kDebugMode) {
-      print("🟡 didChangeDependencies() -> Dependencias cambiadas");
+      print("🟡 didChangeDependencies() -> Tema actual");
     }
   }
 
@@ -42,7 +44,7 @@ class _CicloVidaScreenState extends State<CicloVidaScreen> {
     }
 
     return BaseView(
-      title: "Ciclo de Vida en Flutter",
+      title: "Ciclo de Vida de en flutter",
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -59,7 +61,7 @@ class _CicloVidaScreenState extends State<CicloVidaScreen> {
     );
   }
 
-  /// Método para actualizar el estado con setState()
+  //actualiza el texto y lo muestra en la pantalla
   void actualizarTexto() {
     setState(() {
       texto = "Texto actualizado 🟠";
