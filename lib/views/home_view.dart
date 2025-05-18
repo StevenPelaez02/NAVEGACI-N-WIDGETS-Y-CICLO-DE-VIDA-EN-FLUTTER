@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hola_mundo/views/base_view.dart';
-import 'package:hola_mundo/views/contador.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
